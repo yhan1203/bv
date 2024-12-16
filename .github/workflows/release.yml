@@ -10,7 +10,7 @@ jobs:
   build-release:
     name: Build Release Apk
     runs-on: macos-latest
-    if: github.repository == 'yhan1203/bv'
+    if: github.repository == 'yhan1203/bv/tree/yhan1203_beta'
 
     steps:
       - name: Checkout
