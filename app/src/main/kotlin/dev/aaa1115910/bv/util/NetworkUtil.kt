@@ -45,7 +45,7 @@ object NetworkUtil {
 
                     require(networkCheckResult["loc"] != "CN") { "BV doesn't support use in mainland China" }
                     false
-                }.getOrDefault(true)
+                }.getOrDefault(false)
             }
         }
 
