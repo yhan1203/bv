@@ -41,7 +41,8 @@
 
     <string name="delete_account_confirm_dialog_confirm">gkd 别墨迹</string>
     <string name="delete_account_confirm_dialog_dismiss">不，我不想</string>
-    <string name="delete_account_confirm_dialog_text">是否移除账号 %1$s\nUID:%2$d</string>
+    <string name="delete_account_confirm_dialog_text">是否移除账号 %1$s
+UID:%2$d</string>
     <string name="delete_account_confirm_dialog_title">移除账号</string>
 
     <string name="exception_auth_failure">用户身份认证已失效，请重新登录</string>
@@ -133,7 +134,8 @@
     <string name="player_controller_menu_item_subtitle_padding">字幕底部间距</string>
     <string name="player_controller_menu_item_video_aspect_ratio">视频比例</string>
     <string name="player_controller_menu_item_video_codec">视频编码</string>
-    <string name="player_tip_need_pay">请先购买影片再进行观看\n不支持试看</string>
+    <string name="player_tip_need_pay">请先购买影片再进行观看
+不支持试看</string>
 
     <string name="proxy_server_edit_dialog_input_field_label">服务器域名</string>
     <string name="proxy_server_edit_dialog_warning">请谨慎使用代理服务器，因为您的登录凭证将会发送至代理服务器，使用代理服务器所带来的一切后果均由用户自行承担</string>
@@ -141,7 +143,8 @@
 
     <string name="remote_control_panel_demo_tip_back">退出</string>
     <string name="remote_control_panel_demo_tip_bottom">按下 [CENTER] 键以继续</string>
-    <string name="remote_control_panel_demo_tip_center">【短按】播放/暂停\n【长按】打开菜单</string>
+    <string name="remote_control_panel_demo_tip_center">【短按】播放/暂停
+【长按】打开菜单</string>
     <string name="remote_control_panel_demo_tip_down">视频播放信息</string>
     <string name="remote_control_panel_demo_tip_lr">后退/前进</string>
     <string name="remote_control_panel_demo_tip_up">剧集/合集/分 P 列表</string>
@@ -679,4 +682,12 @@
     <string name="video_player_referer">https://www.bilibili.com</string>
     <string name="video_player_user_agent_client">Bilibili Freedoooooom/MarkII</string>
     <string name="video_player_user_agent_http">Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/104.0.0.0 Safari/537.36</string>
+    <string name="region_block_title">地区限制</string>
+    <string name="region_block_subtitle_mobile">抱歉，您所在的地区无法访问此内容。</string>
+    <string name="region_block_subtitle_tv">抱歉，您所在的地区无法访问此内容。</string>
+    <string name="region_block_exit_button">退出应用</string>
+    <string name="region_block_qr_content">扫码了解详情</string>
+    <string name="region_block_character_painting">字符画</string>
+    <string name="region_block_solution_title">解决方案</string>
+    <string name="region_block_solution_text">请尝试使用其他网络连接。</string>
 </resources>
