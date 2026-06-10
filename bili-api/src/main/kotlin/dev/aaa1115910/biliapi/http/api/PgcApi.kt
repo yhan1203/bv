@@ -400,7 +400,7 @@ object PgcApi {
         area: Int = -1, isFinish: Int = -1, copyright: Int = -1,
         seasonStatus: Int = -1, seasonMonth: Int = -1, year: String = "-1",
         styleId: Int = -1, sort: Int = 0, page: Int = 1, pagesize: Int = 20, type: Int = 1
-    ) = seasonIndexResult(SeasonIndexType.Anime, order, seasonVersion, spokenLanguageType, area, isFinish, copyright, seasonStatus, seasonMonth, year, styleId, sort, page, pagesize, type)
+    ) = seasonIndexResult(SeasonIndexType.Anime, order, seasonVersion, spokenLanguageType, area, isFinish, copyright, seasonStatus, seasonMonth, year, null, styleId, sort, page, pagesize, type)
 
     suspend fun seasonIndexGuochuangResult(
         order: Int = 0, seasonVersion: Int = -1, isFinish: Int = -1,
