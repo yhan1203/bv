@@ -1,0 +1,90 @@
+name: Build BV
+
+on:
+  push:
+    branches:
+      - develop
+      - 'feature/**'
+  pull_request:
+    branches:
+      - develop
+  workflow_dispatch:
+
+jobs:
+  build:
+    name: Build APK
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+          submodules: 'recursive'
+
+      - name: Set up JDK 21
+        uses: actions/setup-java@v5
+        with:
+          java-version: '21'
+          distribution: 'temurin'
+
+      - name: Setup Gradle
+        uses: gradle/actions/setup-gradle@v4
+
+      - name: Grant execute permission for gradlew
+        run: chmod +x gradlew
+
+      - name: Generate debug keystore
+        run: |
+          keytool -genkey -v \
+            -keystore debug.jks \
+            -alias debug \
+            -keyalg RSA -keysize 2048 \
+            -validity 10000 \
+            -storepass android -keypass android \
+            -dname "CN=builder, OU=dev, O=yhan1203, L=unknown, ST=unknown, C=CN"
+
+      - name: Create signing.properties
+        run: |
+          cat > signing.properties << EOF
+          keystore.path=debug.jks
+          keystore.pwd=android
+          keystore.alias=debug
+          keystore.alias_pwd=android
+          EOF
+
+      - name: Build APK
+        run: ./gradlew assembleDefaultDebug assembleDefaultAlpha
+
+      - name: Read APK metadata
+        id: apk-meta
+        uses: juliangruber/read-file-action@v1
+        with:
+          path: app/build/outputs/apk/default/debug/output-metadata.json
+
+      - name: Set APK info
+        run: |
+          echo "version_code=${{ fromJson(steps.apk-meta.outputs.content).elements[0].versionCode }}" >> $GITHUB_ENV
+          echo "version_name=${{ fromJson(steps.apk-meta.outputs.content).elements[0].versionName }}" >> $GITHUB_ENV
+
+      - name: Upload Debug APK
+        uses: actions/upload-artifact@v4
+        with:
+          name: BV-debug
+          path: app/build/outputs/apk/default/debug/BV_${{ env.version_code }}_${{ env.version_name }}_default_*.apk
+          retention-days: 30
+
+      - name: Upload Alpha APK
+        uses: actions/upload-artifact@v4
+        with:
+          name: BV-alpha
+          path: app/build/outputs/apk/default/alpha/BV_${{ env.version_code }}_${{ env.version_name }}_default_*.apk
+          retention-days: 30
+
+      - name: Upload release APK (if signing configured)
+        continue-on-error: true
+        uses: actions/upload-artifact@v4
+        with:
+          name: BV-release
+          path: app/build/outputs/apk/default/release/BV_${{ env.version_code }}_${{ env.version_name }}_default_*.apk
+          retention-days: 30
