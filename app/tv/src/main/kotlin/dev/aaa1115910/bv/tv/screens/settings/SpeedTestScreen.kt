@@ -22,6 +22,7 @@ import androidx.tv.material3.Surface
 import androidx.tv.material3.SurfaceDefaults
 import androidx.tv.material3.Text
 import androidx.webkit.WebViewClientCompat
+import dev.aaa1115910.bv.BuildConfig
 import dev.aaa1115910.bv.R
 import dev.aaa1115910.bv.util.Prefs
 
@@ -85,7 +86,7 @@ fun SpeedTestScreen(
                 WebView(ctx).apply {
                     this.webViewClient = webViewClient
 
-                    setWebContentsDebuggingEnabled(true)
+                    setWebContentsDebuggingEnabled(BuildConfig.DEBUG)
 
                     settings.apply {
                         userAgentString =
