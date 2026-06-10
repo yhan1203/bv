@@ -11,6 +11,7 @@ import dev.aaa1115910.biliapi.http.entity.dynamic.DynamicDetailData
 import io.ktor.client.request.get
 import io.ktor.client.request.header
 import io.ktor.client.request.parameter
+import io.ktor.client.statement.body
 
 object DynamicApi {
     private val client get() = BiliHttpApi.client
