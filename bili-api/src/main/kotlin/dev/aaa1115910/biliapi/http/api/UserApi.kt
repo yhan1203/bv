@@ -25,7 +25,7 @@ import dev.aaa1115910.biliapi.http.entity.user.favorite.FavoriteItemIdListRespon
 import dev.aaa1115910.biliapi.http.entity.user.favorite.UserFavoriteFoldersData
 import dev.aaa1115910.biliapi.http.entity.user.garb.Equip
 import dev.aaa1115910.biliapi.http.entity.user.garb.EquipPart
-import io.ktor.client.statement.body
+import io.ktor.client.call.body
 import dev.aaa1115910.biliapi.http.entity.web.NavResponseData
 import dev.aaa1115910.biliapi.http.util.checkToken
 import io.ktor.client.request.forms.FormDataContent

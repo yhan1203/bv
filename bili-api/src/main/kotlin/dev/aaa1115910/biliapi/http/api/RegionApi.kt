@@ -14,7 +14,7 @@ import dev.aaa1115910.biliapi.http.entity.region.RegionLocs
 import dev.aaa1115910.biliapi.http.util.BiliAppConf
 import io.ktor.client.request.get
 import io.ktor.client.request.parameter
-import io.ktor.client.statement.body
+import io.ktor.client.call.body
 import io.ktor.client.request.header
 import io.ktor.client.request.parameter
 
