@@ -12,6 +12,7 @@ import dev.aaa1115910.biliapi.http.entity.search.SearchResultData
 import dev.aaa1115910.biliapi.http.entity.search.SearchTendingData
 import dev.aaa1115910.biliapi.http.entity.search.WebSearchSquareData
 import dev.aaa1115910.biliapi.http.util.BiliAppConf
+import io.ktor.client.call.body
 import io.ktor.client.request.get
 import io.ktor.client.request.header
 import io.ktor.client.request.parameter
